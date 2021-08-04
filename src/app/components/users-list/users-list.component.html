@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr scope="row" *ngFor="let user of users.userData">
+                <td>{{user.id}}</td>
+                <td><img [src]='user.avatar' /></td>
+                <td>{{user.first_name}} {{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-primary me-2" type="button" (click)="userDetails(user.id)">View</button>
+                        <button class="btn btn-danger" type="button" (click)="deleteUser(user.id)">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
